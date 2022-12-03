@@ -1,5 +1,7 @@
+import UserBar from './user-bar';
+
 export default async function Home() {
-  interface Post {
+  type Post = {
     userId: number;
     id: number;
     title: string;
@@ -15,9 +17,8 @@ export default async function Home() {
       {posts.map((post, i) => {
         return (
           <div key={i} className="border border-black">
-            <h1>UserId:{post.userId}</h1>
-            <h1>PostId:{post.id}</h1>
-            <h1>{post.title}</h1>
+            <UserBar userId={post.userId}/>
+            <h1 className='text-2xl font-semibold'>{post.title}</h1>
             <h1>{post.body}</h1>
           </div>
         );
