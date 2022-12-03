@@ -1,3 +1,4 @@
+import RandomNum from "./random";
 import UserBar from "./user-bar";
 
 export default async function Home() {
@@ -8,7 +9,6 @@ export default async function Home() {
     body: string;
   };
 
-  const num = Math.random() * 100;
 
   const posts: Post[] = await (
     await fetch("https://jsonplaceholder.typicode.com/posts")
@@ -16,7 +16,7 @@ export default async function Home() {
 
   return (
     <div className="p-4 ">
-      <h1>{num}</h1>
+      <RandomNum/>
       <div className="grid grid-cols-3 gap-4">
         {posts.map((post, i) => {
           return (
