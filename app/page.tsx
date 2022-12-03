@@ -11,7 +11,7 @@ export default async function Home() {
   const num = Math.random() * 100;
 
   const posts: Post[] = await (
-    await fetch("https://jsonplaceholder.typicode.com/posts")
+    await fetch("https://jsonplaceholder.typicode.com/posts", {cache:"no-cache"})
   ).json();
 
   return (
